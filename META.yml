@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Dancer-Plugin-REST
-version:            0.0001_01
+version:            0.02
 abstract:           REST plugin for Dancer
 author:  []
 license:            perl
