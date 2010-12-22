@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Dancer-Plugin-REST
-version:            0.03
+version:            0.04
 abstract:           REST plugin for Dancer
 author:  []
 license:            perl
@@ -10,7 +10,7 @@ configure_requires:
 build_requires:
     Test::More:  0.87
 requires:
-    Dancer:  1.178_01
+    Dancer:  1.2000
     JSON:    0
 resources:
     repository:  http://github.com/sukria/Dancer-Plugin-REST
