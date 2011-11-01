@@ -7,4 +7,5 @@ t/01_base.t
 t/02_prepare_serializer_for_format.t
 t/03_resource.t
 t/04_plugin_settings.t
-META.yml                                 Module meta-data (added by MakeMaker)
+META.yml                                 Module YAML meta-data (added by MakeMaker)
+META.json                                Module JSON meta-data (added by MakeMaker)
