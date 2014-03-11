@@ -1,4 +1,9 @@
 package Dancer::Plugin::REST;
+BEGIN {
+  $Dancer::Plugin::REST::AUTHORITY = 'cpan:SUKRIA';
+}
+# ABSTRACT: A plugin for writing RESTful apps with Dancer
+$Dancer::Plugin::REST::VERSION = '0.08';
 use strict;
 use warnings;
 
@@ -6,14 +11,13 @@ use Carp 'croak';
 use Dancer ':syntax';
 use Dancer::Plugin;
 
-our $AUTHORITY = 'SUKRIA';
-our $VERSION   = '0.07';
-
 my $content_types = {
     json => 'application/json',
     yml  => 'text/x-yaml',
     xml  => 'application/xml',
 };
+
+our $default_serializer;
 
 register prepare_serializer_for_format => sub {
     my $conf        = plugin_setting;
@@ -28,23 +32,34 @@ register prepare_serializer_for_format => sub {
     );
 
     hook 'before' => sub {
-        my $format = params->{'format'};
-        return unless defined $format;
+        # remember what was there before
+        $default_serializer ||= setting 'serializer';
 
-        my $serializer = $serializers->{$format};
-        unless (defined $serializer) {
-            return halt(
+        my $format = params->{'format'} or return;
+
+        my $serializer = $serializers->{$format}
+            or return halt(
                 Dancer::Error->new(
                     code    => 404,
+                    title   => "unsupported format requested",
                     message => "unsupported format requested: " . $format
-                )
+                )->render
             );
-        }
 
         set serializer => $serializer;
-        my $ct = $content_types->{$format} || setting('content_type');
-        content_type $ct;
+
+        # check if we were supposed to deserialize the request
+        Dancer::Serializer->process_request(
+            Dancer::SharedData->request
+        );
+
+        content_type $content_types->{$format} || setting('content_type');
     };
+
+    hook after => sub {
+        # put it back the way it was
+        set serializer => $default_serializer;
+    }
 };
 
 register resource => sub {
@@ -163,13 +178,24 @@ for my $code (keys %http_codes) {
 
 register_plugin;
 1;
+
 __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Dancer::Plugin::REST - A plugin for writing RESTful apps with Dancer
+
+=head1 VERSION
+
+version 0.08
+
+=head1 DESCRIPTION
+
+This plugin helps you write a RESTful webservice with Dancer.
 
 =head1 SYNOPSYS
 
@@ -192,10 +218,6 @@ Dancer::Plugin::REST - A plugin for writing RESTful apps with Dancer
     id: 42
     name: "John Foo"
     email: "john.foo@example.com"
-
-=head1 DESCRIPTION
-
-This plugin helps you write a RESTful webservice with Dancer.
 
 =head1 KEYWORDS
 
@@ -276,5 +298,26 @@ Cuny.
 =head1 SEE ALSO
 
 L<Dancer> L<http://en.wikipedia.org/wiki/Representational_State_Transfer>
+
+=head1 AUTHORS
+
+=over 4
+
+=item *
+
+Alexis Sukrieh <sukria@sukria.net>
+
+=item *
+
+Franck Cuny <franckc@cpan.org>
+
+=back
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2010 by Alexis Sukrieh.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut

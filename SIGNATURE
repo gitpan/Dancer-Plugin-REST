@@ -1,0 +1,44 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.73.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 51ca181f79c1989c92d899b7be78e3058d5f49f9 Build.PL
+SHA1 ff6b320f9da3a99f226142360c64b711c1310711 CONTRIBUTORS
+SHA1 689c4ac1bd03e052ba86d2bf5f848fedd87fb78c Changes
+SHA1 3a432efd402166ab271516bfc1622488f5ec10a4 INSTALL
+SHA1 275383eac567137660ff0ae7fd02ee0ac280093e LICENSE
+SHA1 520819336edbf3c74dbe3499c8ed2cbdc7bf0216 MANIFEST
+SHA1 c08b0b9daecf4f129e2fe0756fb37fa142fa5948 META.json
+SHA1 c65a11f1958560cc2dd77b4c93315129a1054f0c META.yml
+SHA1 7bf987e42e6940e25da856a2b7f77f59840ec34c README
+SHA1 de0a274bdb2555221c622a0c947b66b71ecff4a4 README.mkdn
+SHA1 04637dfb1010cb4eaaf9113fc92ef7bcd8ac69db lib/Dancer/Plugin/REST.pm
+SHA1 9ce10b7155607bbdfe5d7fdf7dfe9bb8ce7ca282 t/00-compile.t
+SHA1 2867c42f0882720334e313e60059644c1a6ca98a t/000-report-versions-tiny.t
+SHA1 3a11e9ee017c11a3a2cdb45f096983806b236730 t/01_base.t
+SHA1 1b060d6e41bb1ebe2ddb720b0082f44802e9b804 t/02_prepare_serializer_for_format.t
+SHA1 107292e8409b86be6810c83359c2c237dabbb04e t/03_resource.t
+SHA1 4a098f9b9c656097298be8fb3e5ceaa1d3fffe47 t/04_helpers.t
+SHA1 9cdbfdec34c6bd49010a26aeabbaa099ec5d40d4 t/04_plugin_settings.t
+SHA1 df794a0892796255795db756fd9b371f1a7238e6 t/default-serializer.t
+SHA1 ac4341858f8097a852c269a23fb9eef2bf997cb2 t/two-posts.t
+SHA1 ec3f84bfd7a9ce3246e7592f4134100c6b5ce02b xt/release/unused-vars.t
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.14 (GNU/Linux)
+
+iEYEARECAAYFAlMeYTYACgkQ34Hwf+GwC4xuyACeO2nVzVQKoDTmmWLgdsTmB7cK
+ZNEAnjmB1g9DET+Lco3kHInT/xuzPdkA
+=vsUy
+-----END PGP SIGNATURE-----
