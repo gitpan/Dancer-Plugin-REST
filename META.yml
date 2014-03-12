@@ -25,7 +25,7 @@ name: Dancer-Plugin-REST
 provides:
   Dancer::Plugin::REST:
     file: lib/Dancer/Plugin/REST.pm
-    version: '0.08'
+    version: '0.09'
 requires:
   Carp: '0'
   Dancer: '0'
@@ -33,10 +33,10 @@ requires:
   strict: '0'
   warnings: '0'
 resources:
-  bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=Dancer-Plugin-REST
+  bugtracker: https://github.com/perldancer/Dancer-Plugin-REST/issues
   homepage: http://search.cpan.org/dist/Dancer-Plugin-REST/
   repository: https://github.com/perldancer/Dancer-Plugin-REST.git
-version: '0.08'
+version: '0.09'
 x_authority: cpan:SUKRIA
 x_contributors:
   - 'James Aitken <loonypandora@gmail.com>'

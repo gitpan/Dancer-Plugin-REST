@@ -55,14 +55,13 @@
    "provides" : {
       "Dancer::Plugin::REST" : {
          "file" : "lib/Dancer/Plugin/REST.pm",
-         "version" : "0.08"
+         "version" : "0.09"
       }
    },
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "mailto" : "bug-dancer-plugin-rest at rt.cpan.org",
-         "web" : "http://rt.cpan.org/Public/Dist/Display.html?Name=Dancer-Plugin-REST"
+         "web" : "https://github.com/perldancer/Dancer-Plugin-REST/issues"
       },
       "homepage" : "http://search.cpan.org/dist/Dancer-Plugin-REST/",
       "repository" : {
@@ -71,7 +70,7 @@
          "web" : "https://github.com/perldancer/Dancer-Plugin-REST"
       }
    },
-   "version" : "0.08",
+   "version" : "0.09",
    "x_authority" : "cpan:SUKRIA",
    "x_contributors" : [
       "James Aitken <loonypandora@gmail.com>",

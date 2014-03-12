@@ -19,7 +19,7 @@ my %module_build_args = (
     "Franck Cuny <franckc\@cpan.org>"
   ],
   "dist_name" => "Dancer-Plugin-REST",
-  "dist_version" => "0.08",
+  "dist_version" => "0.09",
   "license" => "perl",
   "module_name" => "Dancer::Plugin::REST",
   "recommends" => {},

@@ -1,5 +1,12 @@
 Revision history for
 
+0.09 2014-03-11
+ [BUG FIXES]
+ - Skip test if XML::Simple is not installed.
+
+ [STATISTICS]
+ - code churn: 2 files changed, 26 insertions(+), 3 deletions(-)
+
 0.08 2014-03-10
  [BUG FIXES]
  - 'prepare_serializer_for_format' was clobbering the default serializer.
