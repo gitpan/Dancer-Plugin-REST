@@ -19,14 +19,14 @@ my %module_build_args = (
     "Franck Cuny <franckc\@cpan.org>"
   ],
   "dist_name" => "Dancer-Plugin-REST",
-  "dist_version" => "0.09",
+  "dist_version" => "0.10",
   "license" => "perl",
   "module_name" => "Dancer::Plugin::REST",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
     "Carp" => 0,
-    "Dancer" => 0,
+    "Dancer" => "1.3111",
     "Dancer::Plugin" => 0,
     "strict" => 0,
     "warnings" => 0
