@@ -3,7 +3,7 @@ BEGIN {
   $Dancer::Plugin::REST::AUTHORITY = 'cpan:SUKRIA';
 }
 # ABSTRACT: A plugin for writing RESTful apps with Dancer
-$Dancer::Plugin::REST::VERSION = '0.10';
+$Dancer::Plugin::REST::VERSION = '0.11';
 use strict;
 use warnings;
 
@@ -80,9 +80,10 @@ register resource => sub {
 
         if ( $t eq 'create' ) {
             $method->( "/${resource}" => $triggers{$t} );
+            $method->( "/${resource}.:format" => $triggers{$t} );
         }
         else {
-            for my $ext ( '', '.:format' ) {
+            for my $ext ( '.:format', '' ) {
                 $method->( "/${resource}/:id$ext" => $triggers{$t} );
             }
         }
@@ -193,7 +194,7 @@ Dancer::Plugin::REST - A plugin for writing RESTful apps with Dancer
 
 =head1 VERSION
 
-version 0.10
+version 0.11
 
 =head1 DESCRIPTION
 

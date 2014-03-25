@@ -55,7 +55,7 @@
    "provides" : {
       "Dancer::Plugin::REST" : {
          "file" : "lib/Dancer/Plugin/REST.pm",
-         "version" : "0.10"
+         "version" : "0.11"
       }
    },
    "release_status" : "stable",
@@ -70,9 +70,10 @@
          "web" : "https://github.com/perldancer/Dancer-Plugin-REST"
       }
    },
-   "version" : "0.10",
+   "version" : "0.11",
    "x_authority" : "cpan:SUKRIA",
    "x_contributors" : [
+      "Breno G. de Oliveira <garu@cpan.org>",
       "James Aitken <loonypandora@gmail.com>",
       "Yanick Champoux <yanick@babyl.dyndns.org>"
    ]
